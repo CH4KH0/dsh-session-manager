@@ -164,6 +164,7 @@ $cli  = '<插件目录>\lib\cli.js'
 
 ## 版本
 
+- **v1.4.5** —— **修复**：移动到局域网/UNC 路径工作区时报「target session dir already exists」。根因是 Windows/UNC 路径大小写不敏感（`\\host\DATA_12T` 与 `\\host\data_12t` 同一处），而插件的路径比较大小写敏感，把「已在目标位置」误判为需要移动。现在：物理移动用归一化比较；header.cwd 重写保持精确比较（宿主 projectKey 编码大小写敏感，必须与 workspace.path 逐字节一致）；目标已有同一会话的残留目录时合并（保留 mtime 较新的一份）而非报错；去重后清理空的父目录
 - **v1.4.4** —— **修复**：移动会话返回值引用了块级作用域外的 `fixedCaches`，导致移动实际成功但弹出「移动会话失败: fixedCaches is not defined」假报错。移动操作本身（物理移动 / workspace.json / projcache 同步）此前均已完成，不受影响
 - **v1.4.1** —— **关键修复**：移动会话时同步 `session_projcache` 缓存的 `identity.cwd`。此前宿主启动按缓存里的旧 cwd 挂载会话，导致移动过的会话在重启后从侧栏彻底消失（新旧分组都不显示）。缓存损坏时自动删除交由宿主重建
 - **v1.4.0** —— 删除/移动成功后**一键自动重启 DSH**（双层实现：Electron `app.relaunch()` 优雅重启 → 失败自动分离式助手强杀重拉）；面板头部新增「重启 DeepSeek」兜底按钮；新路由 `/session-manager/restart`

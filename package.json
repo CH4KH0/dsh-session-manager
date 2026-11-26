@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-manager",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "private": true,
   "type": "module",
   "description": "Delete/move DeepSeek Harness sessions with trash+restore+purge, audit history and a sidebar management panel.",
