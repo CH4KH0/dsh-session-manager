@@ -1,0 +1,8 @@
+node_modules/
+*.bak
+*.bak_*
+*.bak2_*
+core.js.bak*
+npm-debug.log*
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Manager",
+    "description": "Delete sessions with their local resources, or move a session to another workspace group."
+  }
+}
