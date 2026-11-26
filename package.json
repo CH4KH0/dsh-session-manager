@@ -1,6 +1,6 @@
 {
   "name": "dsh-session-manager",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": true,
   "type": "module",
   "description": "Delete/move DeepSeek Harness sessions with trash+restore+purge, audit history and a sidebar management panel.",
@@ -23,7 +23,7 @@
   "dsh": {
     "id": "dsh-session-manager",
     "name": "Session Manager",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
